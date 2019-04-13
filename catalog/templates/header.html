@@ -1,0 +1,51 @@
+{% extends "main.html" %}
+{% block content %}
+	
+	<div class="jumbotron" style="
+	margin: 0 0 0 0;
+	background-position: 0% 30%;
+	background-color: rgb(60, 60, 60);
+	height: 200px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: white;
+	text-align: center;
+	font-size: 80px;
+	">
+		Guitar Play
+		<p>“You couldn't not like someone who liked the guitar.” 
+									― Stephen King, The Stand</p>
+	</div>
+
+	<!-- Guitar type Navbar -->
+		<div class="category-nav">
+			<nav class="navbar navbar-default">
+				<div class="mybox">
+			    	
+				    <div class="row" style="margin-right:0%">
+					 	<ul class="nav navbar-nav">
+					 		<li class="col-md-3 col-xs-3"><a href="{{url_for('showHome')}}"><h4>All Guitars</h4></a></li>
+					    	<li class="col-md-3 col-xs-3"><a href="{{url_for('acoustic')}}"><h4>Acoustic</h4></a></li>
+					    	<li class="col-md-3 col-xs-3"><a href="{{url_for('electric')}}"><h4>Electric</h4></a></li>
+					    	<li class="col-md-3 col-xs-3"><a href="{{url_for('electric_acoustic')}}"><h4>Electric Acoustic</h4></a></li>
+					    </ul>
+
+				    	<div class="nav navbar-nav navbar-right" style="margin-right: 0%;">
+					     	{% if 'username' not in session %}
+				    			<li class="col-xs-3 col-md-3"><a href="{{url_for('showLogin')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				    		{% else %}
+				    			<li class="col-xs-3 col-md-3"><a href="{{url_for('gdisconnect')}}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+			    			{% endif %}
+			    		</div> 
+		    		</div>
+				</div>
+			</nav>
+		</div>
+	<!-- End of type navbar -->
+
+
+
+	
+
+
+{% endblock %}

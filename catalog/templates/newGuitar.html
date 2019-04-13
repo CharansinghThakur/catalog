@@ -1,0 +1,40 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="container">
+	<div class="panel panel-success">
+		<div class="panel-heading">
+			<div class="row">
+				<div class="col-md-11 col-md-offset-1 ">
+					<h1 style="padding: 20px; padding-left: 0px; color: rgb(60,60,60);font-weight: bold; font-size: 50px; font-family: serif;">Add a new guitar</h1>
+				</div>
+			</div>
+		</div>
+	
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-1 padding-top">
+					<form action="{{ url_for('newGuitar')}}" method = "post">
+						<div class="form-group">
+						<label for="guitar_name">Guitar Name:</label>
+						<input type ="text" class="form-control" maxlength="100" name="guitar_name" align="center" required pattern="([^\s][A-z\s]+)"><br>
+
+						<label for="guitar_type">Guitar type:</label><br>
+						<input type="radio" name="type" value="None" checked > None<br></input>
+						<input type="radio" name="type" value="Acoustic" > Acoustic<br></input>
+						<input type="radio" name="type" value="Electric"> Electric<br></input>
+						<input type="radio" name="type" value="Electric Acoustic"> Electric Acoustic<br></input> <br>
+						
+						<label for="price">Price:</label>
+						<input type ="text" class="form-control" maxlength="100" name="price" required  pattern="[0-9]+">
+						<div class="padding-bottom"></div><br>
+						<button type="submit" class="btn btn-default" id="submit" type="submit">
+						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+{% endblock %}

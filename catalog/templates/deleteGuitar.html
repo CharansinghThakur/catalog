@@ -1,0 +1,32 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="container">
+	<div class="panel panel-danger">
+		<div class="panel-heading">
+			<div class="row" style="margin-right:0%;">
+				<div class="col-md-11 col-md-offset-1 ">
+					<h1 style="padding: 20px; padding-left: 0px; color: rgb(60,60,60);font-weight: bold; font-size: 50px; font-family: serif;">Delete a guitar</h1>
+				</div>
+			</div>
+		</div>
+	
+		<div class="panel-body">
+			<div class="row" style="margin-right:0%;">
+				<div class="col-md-6 col-md-offset-1 padding-top">
+					<h2> Are you sure you want to delete {{guitar.guitar_name}}? </h2>
+				</div>
+				<form action="#" method = 'post'>
+					<button type="submit" class="button1" id="submit" style="padding: 15px;">
+					<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Delete</button>
+					<a href = '{{url_for( 'showHome' )}}'>
+						<button class="button1" style="padding: 15px;">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</button>
+					</a>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+		{% for i in electric %}
+            <div class="row panel panel-default" style="margin-left: auto;margin-right: auto;display: block;text-align: center; border: 0px;padding: 0px;">
+                    <div class="col-md-12 row panel-heading">
+                        <h1 class="col-md-8 text-left">Model Name: {{i.guitar_name}}</h1>
+                        <div class="col-md-2"><a href="{{url_for('editGuitar',guitar_id = i.guitar_id)}}">
+                        <button class="btn-info" style=" padding: 20px 40px; background: white; color:rgb(60,60,60);><span class="glyphicon glyphicon-edit aria-hidden="true"></span>
+                        Edit</button></a></div>
+                        <div class="col-md-2"><a href="{{url_for('deleteGuitar', guitar_id = i.guitar_id )}}">
+                        <button class="btn-danger" style=" padding: 20px 40px; background: white; color:rgb(60,60,60);><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        Delete</button></a></div>
+                    </div>
+                    <div class="col-md-12 panel-body text-left">
+                        <h4>Type: {{i.guitar_type}}</h4>
+                        <h4>Price: {{i.price}}</h4>
+                    </div>
+            </div>
+        {% endfor %}
+
+
+{% endblock %}
